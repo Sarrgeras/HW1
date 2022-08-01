@@ -5,13 +5,13 @@ import homework.task1.task2.start.Main;
 import java.util.Scanner;
 
 public class Rainbow {
-    public final String RED = "Красный";
-    public final String ORANGE = "Оранжевый";
-    public final String YELLOW = "Желтый";
-    public final String GREEN = "Зеленый";
-    public final String SKY_BLUE = "Голубой";
-    public final String BLUE = "Синий";
-    public final String VIOLET = "Фиолетовый";
+    public final String RED = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
+    public final String ORANGE = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
+    public final String YELLOW = "пїЅпїЅпїЅпїЅпїЅпїЅ";
+    public final String GREEN = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
+    public final String SKY_BLUE = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
+    public final String BLUE = "пїЅпїЅпїЅпїЅпїЅ";
+    public final String VIOLET = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 
     String [][] colours = {{RED, ORANGE, YELLOW, GREEN, SKY_BLUE, BLUE, VIOLET} ,{"1", "2", "3", "4", "5", "6", "7"}};
 
