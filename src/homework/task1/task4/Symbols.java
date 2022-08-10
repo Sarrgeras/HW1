@@ -23,7 +23,7 @@ public class Symbols {
         Random rnd = new Random();
         for (int i = 0; i < 7; i++) {
 
-             words = words + symbols.charAt(rnd.nextInt(symbols.length()));
+            words = words + symbols.charAt(rnd.nextInt(symbols.length()));
 
         }
 
@@ -35,7 +35,9 @@ public class Symbols {
         Random rnd = new Random();
         number = "";
         for (int i = 0; i < numbers.length; i++) {
+
             numbers[i] = i;
+
         }
 
         for (int i = 0; i < 7; i++) {
