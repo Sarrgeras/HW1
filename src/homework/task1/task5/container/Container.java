@@ -1,9 +1,10 @@
 package homework.task1.task5.container;
 
 import homework.task1.task5.Deck;
+import homework.task1.task5.Port;
 import homework.task1.task5.main.RandomGenerating;
 
-public class Container {
+public class Container extends Port {
     public int number;
     public int height;
     public int density;

@@ -3,11 +3,13 @@ package homework.task1.task5;
 import homework.task1.task5.main.Constants;
 import homework.task1.task5.main.RandomGenerating;
 
+import java.util.Arrays;
+
 public class Ship extends Deck {
     public String[] nameArray = {"Avrora","Admiral","Titan","Bless","Bismark","Angelika","Angel","Vyaryag",
             "Nevski","Elena"};
-    public String name;
 
+    public double[] weightShip = new double[10];
     Ship[] ships = new Ship[10];
 
     public Ship(){
@@ -15,11 +17,16 @@ public class Ship extends Deck {
     }
 
     public Ship(int number, int height, int density, int diagonal, double weightCylinder, double weightSquare,
-                double weightCone, String name){
+                double weightCone, double[] weightShip){
         super(number,height,density,diagonal, weightCylinder, weightSquare, weightCone);
 
-        this.name = name;
 
+        this.weightShip = weightShip;
+
+    }
+
+    public void menu(){
+        super.menu();
     }
 
     public void add(){
@@ -30,15 +37,15 @@ public class Ship extends Deck {
 
         for (int i = 0; i < ships.length; i++) {
 
-            name = nameArray[i];
+
 
             if (randomGenerating.generateShip() == 1){
                 for (int j = 0; j < 4;) {
                     if (randomGenerating.generateShape() == 1){
                         setNumber(number);
                         number = randomGenerating.generateNumber();
-                        setWeightCylinder(weightCylinder, diagonal);
-                        diagonal = getDiagonal();
+
+                        diagonal = randomGenerating.generateDiagonal();
                         weightCylinder = getWeightCylinder();
                         if (diagonal == constants.SMALL_DIAGONAL){
                             j++;
@@ -50,7 +57,7 @@ public class Ship extends Deck {
                         
                     } else if (randomGenerating.generateShape() == 2) {
 
-                        setWeightSquare(weightSquare, diagonal);
+
                         diagonal = getDiagonal();
                         weightSquare = getWeightSquare();
                         if (diagonal == constants.SMALL_DIAGONAL){
@@ -64,7 +71,7 @@ public class Ship extends Deck {
                     }
                     else {
 
-                        setWeightCone(weightCone, diagonal);
+
                         diagonal = getDiagonal();
                         weightCone = getWeightCone();
                         if (diagonal == constants.SMALL_DIAGONAL){
@@ -83,7 +90,7 @@ public class Ship extends Deck {
                 for (int j = 0; j < 4;) {
                     if (randomGenerating.generateShape() == 1){
 
-                        setWeightCylinder(weightCylinder, diagonal);
+
                         diagonal = getDiagonal();
                         weightCylinder = getWeightCylinder();
                         if (diagonal == constants.SMALL_DIAGONAL){
@@ -96,8 +103,8 @@ public class Ship extends Deck {
 
                     } else if (randomGenerating.generateShape() == 2) {
 
-                        setWeightSquare(weightSquare, diagonal);
-                        diagonal = getDiagonal();
+
+                        diagonal = randomGenerating.generateDiagonal();
                         weightSquare = getWeightSquare();
                         if (diagonal == constants.SMALL_DIAGONAL){
                             j++;
@@ -110,8 +117,8 @@ public class Ship extends Deck {
                     }
                     else {
 
-                        setWeightCone(weightCone, diagonal);
-                        diagonal = getDiagonal();
+
+                        diagonal = randomGenerating.generateDiagonal();
                         weightCone = getWeightCone();
                         if (diagonal == constants.SMALL_DIAGONAL){
                             j++;
@@ -125,17 +132,33 @@ public class Ship extends Deck {
                     }
                 }
             }
+            weightShip[i] = weight;
             weight = 0;
         }
         
-        
-        
-        
     }
 
-    public void out(){
-        for (Ship ship : ships) {
-            System.out.println(ship);
+    public void outWeight(){
+        for (int i = 0; i < weightShip.length; i++) {
+            System.out.println(i + 1 + "корабль - " + weightShip[i]);
         }
+        menu();
+    }
+
+    public double[] getWeightShip() {
+        return weightShip;
+    }
+    public void out() {
+
+        System.out.println(toString());
+        menu();
+    }
+
+    @Override
+    public String toString() {
+        return "Ship{" +
+                "nameArray=" + Arrays.toString(nameArray) +
+                ", weightShip=" + Arrays.toString(weightShip) +
+                '}';
     }
 }

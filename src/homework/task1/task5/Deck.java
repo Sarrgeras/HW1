@@ -1,6 +1,7 @@
 package homework.task1.task5;
 
 import homework.task1.task5.container.Container;
+import homework.task1.task5.main.RandomGenerating;
 
 public class Deck extends Container {
 
@@ -23,7 +24,49 @@ public class Deck extends Container {
 
     }
 
+
+    public double doWeightCone(){
+        int number = 0;
+        int height = 0;
+        int density = 0;
+        diagonal = 0;
+        RandomGenerating randomGenerating = new RandomGenerating();
+        Container container = new Container(number, height, density, diagonal);
+
+        weightCone = (Math.PI * Math.pow((double) randomGenerating.generateDiagonal() / 2, 2) / 3)
+                * randomGenerating.generateHeight() * randomGenerating.generateDensity();
+
+        return weightCone;
+    }
+
+    public double doWeightSquare(){
+        int number = 0;
+        int height = 0;
+        int density = 0;
+        diagonal = 0;
+        Container container = new Container(number, height, density, diagonal);
+        RandomGenerating randomGenerating = new RandomGenerating();
+
+        weightSquare = Math.pow(randomGenerating.generateHeight(), 3) * randomGenerating.generateDensity();
+        return  weightSquare;
+    }
+
+    public double doWeightCylinder() {
+        int number = 0;
+        int height = 0;
+        int density = 0;
+        diagonal = 0;
+        RandomGenerating randomGenerating = new RandomGenerating();
+        Container container = new Container(number, height, density, diagonal);
+
+
+        weightCylinder = Math.PI * Math.pow((double) randomGenerating.generateDiagonal() / 2, 2)
+                * randomGenerating.generateHeight() * randomGenerating.generateDensity();
+        return weightCylinder;
+    }
+
     public double getWeightCylinder() {
+        doWeightCylinder();
         return weightCylinder;
     }
 
@@ -43,6 +86,7 @@ public class Deck extends Container {
     }
 
     public double getWeightSquare() {
+        doWeightSquare();
         return weightSquare;
     }
 
@@ -61,10 +105,11 @@ public class Deck extends Container {
     }
 
     public double getWeightCone() {
+        doWeightCone();
         return weightCone;
     }
 
-    public void setWeightCone(double weightCone, int diagonal){
+   /* public void setWeightCone(double weightCone, int diagonal){
         int number = 0;
         int height = 0;
         int density = 0;
@@ -77,6 +122,8 @@ public class Deck extends Container {
 
         weightCone = (Math.PI * Math.pow((double) container.getDiagonal() / 2, 2) / 3) * container.getHeight()
                 * container.getDensity();
-    }
+    }*/
+
+
 
 }
