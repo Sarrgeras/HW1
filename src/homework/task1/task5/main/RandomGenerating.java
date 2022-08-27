@@ -2,6 +2,7 @@ package homework.task1.task5.main;
 
 import homework.task1.task5.container.Container;
 
+
 import java.util.Random;
 
 public class RandomGenerating {

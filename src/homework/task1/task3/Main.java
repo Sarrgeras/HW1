@@ -1,6 +1,6 @@
 package homework.task1.task3;
 
-import com.sun.source.tree.CaseLabelTree;
+
 import homework.task1.task2.colour.Rainbow;
 
 import java.util.Scanner;

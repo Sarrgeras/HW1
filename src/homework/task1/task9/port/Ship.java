@@ -14,17 +14,18 @@ public class Ship {
 
     private static final List<Ship> ships = new ArrayList<>();
 
-    public Ship(){
+    public Ship() {
 
     }
-    public Ship(String name, int number, int capacity){
+
+    public Ship(String name, int number, int capacity) {
         this.name = name;
         this.number = number;
         this.capacity = capacity;
     }
 
     public void addShip(String name, int number, int capacity) throws IllegalShipNumberException {
-        if ((verifyShipNumber(name, number, capacity)) && (verifyShipCapacity(name, number, capacity))){
+        if ((verifyShipNumber(name, number, capacity)) && (verifyShipCapacity(name, number, capacity))) {
             ships.add(new Ship(name, number, capacity));
         }
 
@@ -33,8 +34,7 @@ public class Ship {
     private boolean verifyShipNumber(String name, int number, int capacity) throws IllegalShipNumberException {
         if (number < 0) {
             throw new IllegalShipNumberException("* Ship's number incorrect! *");
-        }
-        else{
+        } else {
             return true;
         }
     }
@@ -49,7 +49,7 @@ public class Ship {
         }
     }
 
-    public boolean scanShip(Ship ship){
+    public boolean scanShip(Ship ship) {
         for (Ship scanShip : ships) {
             if (scanShip.equals(ship)) {
                 return true;
