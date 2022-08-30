@@ -12,7 +12,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         MakingCheck makingCheck = new MakingCheck();
         makingCheck.addOrder();
-        System.out.println(makingCheck);
+        System.out.println(makingCheck.toString().replaceAll("\\p{P}", ""));
+        makingCheck.addLine();
     }
 
 }
