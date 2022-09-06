@@ -33,16 +33,9 @@ public class MakingCheck extends MakingOrder{
     }
 
     public void addLine() throws IOException{
-        File file = new File("D://Java prjccts//HW1//src//homework//task1//task10//resources//check.txt");
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))){
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-            char[] buffer = new char[8096];
-            bufferedReader.read(buffer);
-            String str = new String(buffer);
 
-            bufferedWriter.append("код товара");
-            bufferedWriter.append(str);
-        }    }
+    }
+
 
     @Override
     public String toString() {
